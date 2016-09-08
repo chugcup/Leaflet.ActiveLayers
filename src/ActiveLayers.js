@@ -116,13 +116,13 @@ L.Control.ActiveLayers = L.Control.Layers.extend({
         obj = this._layers[input.layerId]   // 0.7.x
       }
 
-      if (input.checked && !this._map.hasLayer(obj.layer)) {
+      if (this._map.hasLayer(obj.layer)) {
         if (obj.overlay) {
           this._activeOverlayLayers[input.layerId] = obj
         } else {
           this._activeBaseLayer = obj
         }
-      } else if (!input.checked && this._map.hasLayer(obj.layer)) {
+      } else {
         if (obj.overlay) {
           delete this._activeOverlayLayers[input.layerId]
         }
