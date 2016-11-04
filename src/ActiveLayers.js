@@ -44,7 +44,7 @@ L.Control.ActiveLayers = L.Control.Layers.extend({
         return layer
       }
     }
-    throw new Error('Control doesn\'t have any active base layer!')
+    return null
   },
 
   _findActiveOverlayLayers: function () {
@@ -72,7 +72,7 @@ L.Control.ActiveLayers = L.Control.Layers.extend({
         }
       }
     }
-    throw new Error('Control doesn\'t have any active base layer!')
+    return null
   },
 
   _findActiveOverlayLayersLegacy: function () {
